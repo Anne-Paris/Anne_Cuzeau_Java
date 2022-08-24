@@ -47,10 +47,7 @@ public class Main {
                         accountrecord.setChargeDate(s[3]);
 
                         //Add new account charges to the existing AccountRecord list
-                        int i = customers.indexOf(c);
-                        Customer existing_customer = customers.get(i);
-                        List<AccountRecord> existing_customerCharges = existing_customer.getCharges();
-                        existing_customerCharges.add(accountrecord);
+                        c.getCharges().add(accountrecord);
                     }
                 }
             }
@@ -76,12 +73,6 @@ public class Main {
                 customers.add(current_customer);
                 }
         }
-
-        //Print Customers
-        /*for (Customer c : customers){
-        String info = c.toString();
-        System.out.println(info);
-        }*/
 
         System.out.println("Positive accounts:");
         for (Customer c : customers){
